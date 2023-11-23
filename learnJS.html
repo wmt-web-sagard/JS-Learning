@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello This is JS</h1>
+
+    <button onclick="calculator()">Click Here To calculation</button>
+    <div>
+      <button onclick="isPrime()">Click Here To Find Prime Number</button>
+    </div>
+    <div>
+      <button
+        ondblclick="isEvenOdd()"
+      >
+        Click Here To Find Even Odd
+      </button>
+    </div>
+    <div>
+      <button onclick="findFactorial()">Click Here To Find Factorial</button>
+    </div>
+
+    <br />
+
+    <script>
+      document.write("JS Learning <br>");
+      var a = 10;
+      var b = 20;
+      document.write(a + b);
+
+      function calculator() {
+        var num1 = Number(prompt("Enter number 1 for calculation :"));
+        var num2 = Number(prompt("Enter number 2 for calculation :"));
+        var op = prompt("Enter Operation :");
+        var ans = 0;
+        switch (op) {
+          case "+":
+            ans = num1 + num2;
+            break;
+          case "-":
+            ans = num1 - num2;
+            break;
+          case "/":
+            ans = num1 / num2;
+            break;
+          case "*":
+            ans = num1 * num2;
+            break;
+          case "%":
+            ans = num1 % num2;
+            break;
+          default:
+            ans = "Enter Oparation Invalid";
+            break;
+        }
+        document.write(`<br><h1>Ans: ${ans} </h1>`);
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      }
+      const isPrime = () => {
+        var num1 = Number(prompt("Enter number 1 for calculation :"));
+        if (num1 === 1 || num1 === 2) {
+          let str = `Number ${num1} is Not Prime`;
+        } else {
+          flag = true;
+          for (let i = 2; i < num1; i++) {
+            if (num1 % i === 0) {
+              flag = false;
+              break;
+            }
+          }
+          if (flag === true) {
+            str = `Number ${num1} is  Prime`;
+          } else {
+            str = `Number ${num1} is Not Prime`;
+          }
+        }
+        document.writeln(str);
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      };
+      const isEvenOdd = ()=>{
+            var num1=Number(prompt("Enter number 1 for calculation :"));
+            if(num1%2===0){
+                str=`Number ${num1} is Even`;
+            }else{
+                str=`Number ${num1} is Odd`;
+            }
+            document.write(`<br><h1> ${str} </h1>`);
+            setTimeout(()=>{
+                location.reload()
+                
+            },2000);
+        }
+      function findFactorial(){
+        const num=Number(prompt("Enter Number To find Factorial :"));
+        let ans=1;
+        for (let i = 1; i <= num; i++) {
+            ans*=i;
+            
+        }
+        document.write(`Factorial of ${num} is ${ans}`);
+        setTimeout(()=>{
+            location.reload();
+        },2000)
+      }
+    </script>
+  </body>
+</html>
